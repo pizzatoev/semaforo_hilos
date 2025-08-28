@@ -13,12 +13,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="293dp"
-            android:layout_height="351dp"
-            app:srcCompat="@drawable/cuerpo_semaforo"
-            android:layout_marginTop="100dp"/>
+
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="200dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/cuerpo_semaforo"
+                />
+            <ImageView
+                android:id="@+id/imgLuz"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/luz_off" />
+        </FrameLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnIniciar"
