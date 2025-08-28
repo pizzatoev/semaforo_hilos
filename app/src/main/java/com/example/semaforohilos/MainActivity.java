@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgLuzAma;
     ImageView imgLuzVer;
 
+    //semaforo 2
+    ImageView imgLuzRojo2;
+    ImageView imgLuzAma2;
+    ImageView imgLuzVer2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         imgLuzRojo = findViewById(R.id.imgLuzRojo);
         imgLuzAma = findViewById(R.id.imgLuzAma);
         imgLuzVer = findViewById(R.id.imgLuzVer);
+
+        //Para el segundo semaforo
+        imgLuzRojo2 = findViewById(R.id.imgLuzRojo2);
+        imgLuzAma2 = findViewById(R.id.imgLuzAma2);
+        imgLuzVer2 = findViewById(R.id.imgLuzVer2);
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,10 +86,90 @@ public class MainActivity extends AppCompatActivity {
                             catch (InterruptedException e){
                                 e.printStackTrace();
                             }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    imgLuzAma.setImageResource(R.drawable.luz_amarilla);
+                                    imgLuzRojo.setImageResource(R.drawable.luz_off);
+                                    imgLuzVer.setImageResource(R.drawable.luz_off);
+                                }
+                            });
+                            try {
+                                Thread.sleep(5000);
+                            }
+                            catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
                         }
                     }
                 });
                 thread.start();
+
+                //Semaforo 2-----------------------
+                Thread thread2 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        while (true) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    imgLuzRojo2.setImageResource(R.drawable.luz_off);
+                                    imgLuzAma2.setImageResource(R.drawable.luz_off);
+                                    imgLuzVer2.setImageResource(R.drawable.luz_verde);
+                                }
+                            });
+                            try {
+                                Thread.sleep(5000);
+                            }
+                            catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    imgLuzAma2.setImageResource(R.drawable.luz_amarilla);
+                                    imgLuzRojo2.setImageResource(R.drawable.luz_off);
+                                    imgLuzVer2.setImageResource(R.drawable.luz_off);
+                                }
+                            });
+                            try {
+                                Thread.sleep(5000);
+                            }
+                            catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    imgLuzVer2.setImageResource(R.drawable.luz_off);
+                                    imgLuzRojo2.setImageResource(R.drawable.luz_roja);
+                                    imgLuzAma2.setImageResource(R.drawable.luz_off);
+                                }
+                            });
+                            try {
+                                Thread.sleep(5000);
+                            }
+                            catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    imgLuzAma2.setImageResource(R.drawable.luz_amarilla);
+                                    imgLuzRojo2.setImageResource(R.drawable.luz_off);
+                                    imgLuzVer2.setImageResource(R.drawable.luz_off);
+                                }
+                            });
+                            try {
+                                Thread.sleep(5000);
+                            }
+                            catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                });
+                thread2.start();
             }
         });
 

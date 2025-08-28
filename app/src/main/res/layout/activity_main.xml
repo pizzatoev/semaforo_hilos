@@ -16,43 +16,75 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="567dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:orientation="horizontal">
-
+            android:layout_marginTop="80dp">
             <FrameLayout
-                android:layout_width="250dp"
-                android:layout_height="390dp"
-                android:layout_marginTop="100dp">
+                android:layout_width="150dp"
+                android:layout_height="290dp"
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/semaforo_largo" />
-
+                    app:srcCompat="@drawable/semaforo_largo"
+                    />
                 <ImageView
                     android:id="@+id/imgLuzRojo"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="25dp"
                     android:src="@drawable/luz_off" />
-
                 <ImageView
                     android:id="@+id/imgLuzAma"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginTop="65dp"
                     android:src="@drawable/luz_off" />
-
                 <ImageView
                     android:id="@+id/imgLuzVer"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="140dp"
+                    android:layout_marginTop="105dp"
+                    android:src="@drawable/luz_off" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="290dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/semaforo_largo"
+                    />
+                <ImageView
+                    android:id="@+id/imgLuzRojo2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/luz_off" />
+                <ImageView
+                    android:id="@+id/imgLuzAma2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="65dp"
+                    android:src="@drawable/luz_off" />
+                <ImageView
+                    android:id="@+id/imgLuzVer2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="105dp"
                     android:src="@drawable/luz_off" />
             </FrameLayout>
         </LinearLayout>
