@@ -31,7 +31,7 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="60dp"
-                android:src="@drawable/luz_off" />
+                android:src="@drawable/luz_roja" />
         </FrameLayout>
 
 

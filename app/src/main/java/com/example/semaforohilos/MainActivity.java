@@ -45,7 +45,19 @@ public class MainActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    imgLuz.setImageResource(R.drawable.luz_off);
+                                    imgLuz.setImageResource(R.drawable.luz_amarilla);
+                                }
+                            });
+                            try {
+                                Thread.sleep(5000);
+                            }
+                            catch (InterruptedException e){
+                                e.printStackTrace();
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    imgLuz.setImageResource(R.drawable.luz_verde);
                                 }
                             });
                             try {
