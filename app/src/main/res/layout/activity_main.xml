@@ -14,54 +14,48 @@
         android:orientation="vertical"
         android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <FrameLayout
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="567dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:srcCompat="@drawable/cuerpo_semaforo"
-                        />
-                    <ImageView
-                        android:id="@+id/imgLuz"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="50dp"
-                        android:src="@drawable/luz_roja" />
-                </FrameLayout>
+            <FrameLayout
+                android:layout_width="250dp"
+                android:layout_height="390dp"
+                android:layout_marginTop="100dp">
 
-                <FrameLayout
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="20dp">
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/semaforo_largo" />
 
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:srcCompat="@drawable/cuerpo_semaforo"
-                        />
-                    <ImageView
-                        android:id="@+id/imgLuz2"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="50dp"
-                        android:src="@drawable/luz_off" />
-                </FrameLayout>
+                <ImageView
+                    android:id="@+id/imgLuzRojo"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/luz_off" />
 
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgLuzAma"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="85dp"
+                    android:src="@drawable/luz_off" />
 
-
+                <ImageView
+                    android:id="@+id/imgLuzVer"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="140dp"
+                    android:src="@drawable/luz_off" />
+            </FrameLayout>
+        </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnIniciar"
             android:layout_width="match_parent"
@@ -73,6 +67,4 @@
             android:padding="15dp"
             android:layout_margin="50dp"/>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

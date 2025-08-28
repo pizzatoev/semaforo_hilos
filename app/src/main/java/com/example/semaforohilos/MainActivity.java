@@ -13,8 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     Button btnIniciar;
-    ImageView imgLuz;
-    ImageView imgLuz2;
+    ImageView imgLuzRojo;
+    ImageView imgLuzAma;
+    ImageView imgLuzVer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnIniciar = findViewById(R.id.btnIniciar);
-        imgLuz = findViewById(R.id.imgLuz);
-        imgLuz2 = findViewById(R.id.imgLuz2);
+        imgLuzRojo = findViewById(R.id.imgLuzRojo);
+        imgLuzAma = findViewById(R.id.imgLuzAma);
+        imgLuzVer = findViewById(R.id.imgLuzVer);
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    imgLuz.setImageResource(R.drawable.luz_roja);
+                                    imgLuzRojo.setImageResource(R.drawable.luz_roja);
+                                    imgLuzAma.setImageResource(R.drawable.luz_off);
+                                    imgLuzVer.setImageResource(R.drawable.luz_off);
                                 }
                             });
                             try {
@@ -47,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    imgLuz.setImageResource(R.drawable.luz_amarilla);
+                                    imgLuzAma.setImageResource(R.drawable.luz_amarilla);
+                                    imgLuzRojo.setImageResource(R.drawable.luz_off);
+                                    imgLuzVer.setImageResource(R.drawable.luz_off);
                                 }
                             });
                             try {
@@ -59,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    imgLuz.setImageResource(R.drawable.luz_verde);
+                                    imgLuzVer.setImageResource(R.drawable.luz_verde);
+                                    imgLuzRojo.setImageResource(R.drawable.luz_off);
+                                    imgLuzAma.setImageResource(R.drawable.luz_off);
                                 }
                             });
                             try {
@@ -72,40 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 thread.start();
-
-                // Segundo Semaforo
-                Thread thread2 = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        while (true) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    imgLuz2.setImageResource(R.drawable.luz_roja);
-                                }
-                            });
-                            try {
-                                Thread.sleep(5000);
-                            }
-                            catch (InterruptedException e){
-                                e.printStackTrace();
-                            }
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    imgLuz2.setImageResource(R.drawable.luz_off);
-                                }
-                            });
-                            try {
-                                Thread.sleep(5000);
-                            }
-                            catch (InterruptedException e){
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                });
-                thread2.start();
             }
         });
 
